@@ -1,0 +1,21 @@
+.material-icons {
+  &--lg {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    color: #ffffff;
+  }
+  &--input {
+    font-size: 30px;
+    color: #bdbdbd;
+    .transition(color @trans-time @mdb-animation-curve-default);
+  }
+}
+
+.label-floating {
+  &.is-focused {
+    .material-icons--input {
+      color: @brand-primary;
+    }
+  }
+}

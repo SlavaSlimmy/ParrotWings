@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sharp interface</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link href='https://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--
+    <header class="header">
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="javascript:void(0)">Parrot Wings</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" data-target="#" href=""><i class="material-icons material-icons--lg">account_box</i> John Doe<span class="badge badge--total">500 PW</span>
+                                <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)">New transaction</a></li>
+                                <li><a href="javascript:void(0)">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href=""><i class="material-icons material-icons--lg">add_box</i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="material-icons material-icons--lg">exit_to_app</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    -->
+    
+    <header class="header">
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="javascript:void(0)">Parrot Wings</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="" title=""><i class="material-icons material-icons--lg">account_box</i> John Doe<span class="badge badge--total">500 PW</span></a>
+                        </li>
+                        <li>
+                            <a href="" title="New transaction"><i class="material-icons material-icons--lg">add_box</i> <span class="navbar__title-menu">New transaction</span></a>
+                        </li>
+                        <li>
+                            <a href="" title="Logout"><i class="material-icons material-icons--lg">exit_to_app</i> <span class="navbar__title-menu">Logout</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="content">
+        <div class="container">
+            <div class="well">
+                <div class="add-transaction">
+                    <h2>Add transaction</h2>
+                    <form class="form">
+                        <fieldset class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-dismissible alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Well done!</strong> You successfully remit the transaction.
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="alert alert-dismissible alert-danger">
+                                    <button data-dismiss="alert" class="close" type="button">×</button>
+                                    <strong>Error!</strong> Not enough PW to remit the transaction.
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 form-group label-floating">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <i class="material-icons material-icons--input">account_circle</i>
+                                    </span>
+                                    <label class="control-label" for="inputSearch">Search user</label>
+                                    <input type="search" id="inputSearch" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 form-group label-floating">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <i class="material-icons material-icons--input">monetization_on</i>
+                                    </span>
+                                    <label class="control-label" for="inputAmount">Amount</label>
+                                    <input type="text" id="inputAmount" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-2 form-group">
+                                <button class="btn btn-primary btn-block btn-raised" type="submit">Commit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="history">
+                    <h2>History</h2>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th><a href="">Date/Time <span class="caret"></span></a></th>
+                                <th><a href="">Corr. name <span class="caret"></span></a></th>
+                                <th><a href="">Amount <span class="caret"></span></a></th>
+                                <th><span>Balance</span></th>
+                                <th class="history__copy"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06/19/2016 18:01</td>
+                                <td>Aria Stark</td>
+                                <td><span class="history--credit">-300</span></td>
+                                <td>500</td>
+                                <td class="history__copy"><a href="" title="Copy transaction"><i class="material-icons">content_copy</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>06/16/2016 10:32</td>
+                                <td>John Snow</td>
+                                <td><span class="history--debit">+400</span></td>
+                                <td>800</td>
+                                <td class="history__copy"><a href="" title="Copy transaction"><i class="material-icons">content_copy</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>06/10/2016 07:45</td>
+                                <td>Tyrion Lannister</td>
+                                <td><span class="history--credit">-100</span></td>
+                                <td>400</td>
+                                <td class="history__copy"><a href="" title="Copy transaction"><i class="material-icons">content_copy</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>06/01/2016 15:52</td>
+                                <td>System</td>
+                                <td><span class="history--debit">+500</span></td>
+                                <td>500</td>
+                                <td class="history__copy"><a href="" title="Copy transaction"><i class="material-icons">content_copy</i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer Scripts -->
+<script src="js/main.js"></script>
+</body>
+</html>

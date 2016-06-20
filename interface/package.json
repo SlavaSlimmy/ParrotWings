@@ -1,0 +1,34 @@
+{
+  "name": "sharp",
+  "version": "1.0.0",
+  "description": "Markup for app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "less",
+    "sprites"
+  ],
+  "author": "Egorov Slava <slava.egorov@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-connect": "*",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rigger": "*",
+    "gulp-rimraf": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "^1.5.3",
+    "gulp-useref": "^3.0.8",
+    "gulp.spritesmith": "^6.2.1",
+    "imagemin-pngquant": "^4.2.2",
+    "opn": "*",
+    "run-sequence": "^1.1.5"
+  }
+}

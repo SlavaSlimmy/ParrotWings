@@ -1,0 +1,13 @@
+.alert {
+  border-radius: 4px;
+  .close {
+    font-weight: 400;
+    text-shadow: none;
+    .opacity(0.7);
+    .transition(opacity @trans-time @mdb-animation-curve-default);
+    &:focus, &:hover {
+      .opacity(1);
+      color:#ffffff;
+    }
+  }
+}

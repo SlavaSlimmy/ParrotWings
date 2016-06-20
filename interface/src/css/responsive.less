@@ -1,0 +1,28 @@
+@media (max-width: @screen-md-max) {
+  .navbar-brand {
+    font-size: @font-size-h1 - 6px;
+  }
+  .navbar .navbar-nav > li > a {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .navbar {
+    &__title-menu {
+      display: none;
+    }
+  }
+}
+@media (max-width: @screen-sm-min) {
+  .navbar {
+    &-collapse {
+      position: absolute;
+      top: 50px;
+      width: 100%;
+      z-index: 5;
+      background-color: @brand-primary;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Starter",
+  "version": "0.0.1",
+  "authors": [
+    "Egorov Slava <slava.egorov@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.*",
+    "font-awesome": "~4.4.0",
+    "jquery": "2.*",
+    "bootstrap-material-design": "^0.5.10"
+  }
+}
