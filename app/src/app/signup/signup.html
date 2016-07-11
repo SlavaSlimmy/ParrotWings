@@ -1,0 +1,49 @@
+<section class="content">
+  <div class="container">
+    <div class="logo">Parrot Wings</div>
+    <div class="signup panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sign up</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form" role="form" (submit)="signup($event, username.value, email.value, password.value, repassword.value)" #userForm="ngForm">
+          <div class="alert alert-dismissible alert-danger" *ngIf="errorMessage">
+            <strong>Error!</strong> {{errorMessage}}
+          </div>
+          <fieldset>
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" for="username">Username</label>
+              <input type="text" #username="ngForm" class="form-control" id="username" required ngControl="username">
+              <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+                Username is required.
+              </div>
+            </div>
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" for="email">Email</label>
+              <input type="email" #email="ngForm" class="form-control" id="email" required ngControl="email">
+              <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Email is required.
+              </div>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" for="password">Password</label>
+              <input type="password" #password="ngForm" class="form-control" id="password" required ngControl="password">
+            </div>
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" for="passwordRepeat">Re-type password</label>
+              <input type="password" #repassword="ngForm" class="form-control" id="passwordRepeat" required ngControl="repassword">
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary btn-block btn-raised" type="submit" [disabled]="!userForm.form.valid">Sign me up</button>
+            </div>
+            <div class="form-group login__signup">
+              Have account? <a href="" (click)="login($event)">Login here</a>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

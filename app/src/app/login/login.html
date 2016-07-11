@@ -1,0 +1,36 @@
+<section class="content">
+  <div class="container">
+    <div class="logo">Parrot Wings</div>
+    <div class="login panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Login</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form" role="form" (submit)="login($event, email.value, password.value)">
+          <div class="alert alert-dismissible alert-danger" *ngIf="errorMessage">
+            <strong>Error!</strong> {{errorMessage}}
+          </div>
+          <fieldset>
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" for="email">Email</label>
+              <input type="email" #email class="form-control" id="email">
+              <p>{{values}}</p>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" for="password">Password</label>
+              <input type="password" #password class="form-control" id="password">
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary btn-block btn-raised" type="submit">Let me in</button>
+            </div>
+            <div class="form-group login__signup">
+              No account yet? <a href="" (click)="signup($event)">Create one</a>
+      </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
