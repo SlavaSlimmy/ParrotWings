@@ -1,9 +1,20 @@
 # ParrotWings
-<h3>Install UI</h3>
-<pre>
-<code>
+
+## Install UI
+````bash
 cd interface
 npm i
 bower i
-</code>
-</pre>
+````
+
+## Install server
+````bash
+cd app/backend
+npm install
+````
+
+## Start server
+````bash
+cd app/backend
+node server.js
+````
