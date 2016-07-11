@@ -1,4 +1,6 @@
 /.idea
-/app
+/app/backend/node_modules
+/app/build
+/app/node_modules
 /interface/bower_components
 /interface/node_modules
