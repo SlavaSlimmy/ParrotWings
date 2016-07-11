@@ -1,0 +1,21 @@
+.dropdown-menu {
+  &.search-results {
+    position: absolute;
+    left: 54px;
+    top: 37px;
+    padding: 0;
+    overflow: hidden;
+    max-width: 300px;
+    font-size: 12px;
+    .dropdown-item {
+      display: block;
+      padding:4px 10px;
+      cursor: pointer;
+      .transition(~"background "@trans-time @mdb-animation-curve-default~", color "@trans-time @mdb-animation-curve-default);
+      &:hover {
+        background: @brand-primary;
+        color: #ffffff;
+      }
+    }
+  }
+}
