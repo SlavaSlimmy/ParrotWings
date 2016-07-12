@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 import { Router } from '@angular/router-deprecated';
 import { History } from '../history/history';
@@ -13,30 +13,32 @@ import '../common/rxjs-operators';
   templateUrl: './app/home/home.html'
 })
 
-export class Home {
+export class Home implements OnInit {
   jwt: string;
   decodedJwt: string;
   username: string;
   balance: number;
   errorMessage: string;
+  userInfo: UserInfo;
 
   constructor(public router: Router, public userService: UserService) {
     this.jwt = localStorage.getItem('jwt');
     this.decodedJwt = this.jwt && window.jwt_decode(this.jwt);
+  }
 
+  ngOnInit() {
     this.getUserInfo();
   }
 
   getUserInfo() {
     this.userService.getUserInfo()
         .subscribe(
-            userInfo => {this.userInfo = userInfo , this.initUserInfo(); },
+            userInfo => {
+              this.userInfo = userInfo;
+              this.username = this.userInfo.name;
+              this.balance = this.userInfo.balance;
+            },
             error =>  this.errorMessage = <any>error);
-  }
-
-  initUserInfo() {
-    this.username = this.userInfo.name;
-    this.balance = this.userInfo.balance;
   }
 
   logout() {

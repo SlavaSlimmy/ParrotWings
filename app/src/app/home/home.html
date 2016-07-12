@@ -27,7 +27,7 @@
   <div class="container">
     <div class="well">
 
-      <history (refreshBalance)="balanceChange($event);"></history>
+      <history [userInfo]="userInfo" (refreshBalance)="balanceChange($event);"></history>
 
     </div>
   </div>

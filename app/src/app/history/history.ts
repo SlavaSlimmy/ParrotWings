@@ -19,7 +19,7 @@ export class History implements OnInit {
     errorMessage: string;
     approveMessage: string;
     transactions: Transaction[];
-    userInfo: UserInfo;
+    @Input() userInfo: UserInfo;
     mode = 'Observable';
 
     refresh: boolean;
@@ -34,7 +34,6 @@ export class History implements OnInit {
 
     constructor (private transactionService: TransactionService, public userService: UserService, private authHttp:AuthHttp) {
         this.refresh = false;
-        this.userInfo = this.getUserInfo();
     }
 
 
@@ -55,7 +54,11 @@ export class History implements OnInit {
         if (!this.checkAmount(amount)) { return; }
         this.transactionService.addTransaction(name, amount)
             .subscribe(
-                transaction  => {this.transactions.push(transaction), this.initRefresh(); },
+                transaction  => {
+                    this.transactions.push(transaction);
+                    this.refresh = true;
+                    this.initRefresh();
+                },
                 error => {
                     this.approveMessage = "";
                     this.errorMessage = <any>error;
@@ -94,11 +97,9 @@ export class History implements OnInit {
 
     initRefresh() {
         this.approveMessage = "You successfully remit the transaction.";
-        this.refresh = true;
         this.refreshBalance.emit({
             value: this.refresh
         });
-        this.userInfo = this.getUserInfo();
         this.refresh = false;
 
         this.sort(this.transactions, 'date');
@@ -132,10 +133,10 @@ export class History implements OnInit {
         this.transName = selected.text;
     }
 
-    copyTrans(event, transaction) {
+    copyTrans(event: any, transaction: Transaction) {
         event.preventDefault();
         this.transName = transaction.username;
-        this.transAmount = (+transaction.amount < 0) ? -transaction.amount : transaction.amount;
+        this.transAmount = (transaction.amount < 0) ? -transaction.amount : transaction.amount;
         this.isEmpty = false;
     }
 }
