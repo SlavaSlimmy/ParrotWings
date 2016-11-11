@@ -42,26 +42,28 @@
 
 <div class="history">
     <h2>History</h2>
-    <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-            <th><span (click)="sort(transactions,'date')">Date/Time <span class="caret"></span></span></th>
-            <th><span (click)="sort(transactions,'username')">Corr. name <span class="caret"></span></span></th>
-            <th><span (click)="sort(transactions,'amount')">Amount <span class="caret"></span></span></th>
-            <th><span>Balance</span></th>
-            <th class="history__copy"></th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th><span (click)="sort(transactions,'date')">Date/Time <span class="caret"></span></span></th>
+                <th><span (click)="sort(transactions,'username')">Corr. name <span class="caret"></span></span></th>
+                <th><span (click)="sort(transactions,'amount')">Amount <span class="caret"></span></span></th>
+                <th><span>Balance</span></th>
+                <th class="history__copy"></th>
+            </tr>
+            </thead>
+            <tbody>
 
-        <tr *ngFor="let transaction of transactions">
-            <td>{{transaction.date}}</td>
-            <td>{{transaction.username}}</td>
-            <td><span [class.history--credit]="transaction.amount < 0" [class.history--debit]="transaction.amount > 0">{{transaction.amount}}</span></td>
-            <td>{{transaction.balance}}</td>
-            <td class="history__copy"><a href="" title="Copy transaction" (click)="copyTrans($event, transaction)"><i class="material-icons">content_copy</i></a></td>
-        </tr>
+            <tr *ngFor="let transaction of transactions">
+                <td>{{transaction.date}}</td>
+                <td>{{transaction.username}}</td>
+                <td><span [class.history--credit]="transaction.amount < 0" [class.history--debit]="transaction.amount > 0">{{transaction.amount}}</span></td>
+                <td>{{transaction.balance}}</td>
+                <td class="history__copy"><a href="" title="Copy transaction" (click)="copyTrans($event, transaction)"><i class="material-icons">content_copy</i></a></td>
+            </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
